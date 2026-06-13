@@ -12,6 +12,8 @@
     "dev:api": "npm run dev -w @vf/api",
     "dev:desktop": "npm run dev -w @vf/desktop",
     "build": "npm run build -w @vf/shared && npm run build -w @vf/api && npm run build -w @vf/desktop",
+    "build:api": "npm run build -w @vf/shared && npm run build -w @vf/api",
+    "vercel-build": "npm run build -w @vf/shared && npm run build -w @vf/api",
     "build:desktop": "npm run build -w @vf/desktop",
     "lint": "npm run lint -w @vf/desktop -w @vf/api --if-present",
     "db:migrate": "node scripts/apply-migration.mjs",
