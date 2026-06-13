@@ -1,0 +1,30 @@
+{
+  "name": "vf-agent-command-center",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VF Agent Command Center — Valiant Firm multi-agent AI operating system",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:desktop\"",
+    "dev:api": "npm run dev -w @vf/api",
+    "dev:desktop": "npm run dev -w @vf/desktop",
+    "build": "npm run build -w @vf/shared && npm run build -w @vf/api && npm run build -w @vf/desktop",
+    "build:desktop": "npm run build -w @vf/desktop",
+    "lint": "npm run lint -w @vf/desktop -w @vf/api --if-present",
+    "db:migrate": "node scripts/apply-migration.mjs",
+    "sync:agents": "node scripts/sync-agents.mjs",
+    "verify:agents": "npm run build -w @vf/shared && node scripts/verify-agents.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "dotenv": "^17.4.2",
+    "pg": "^8.21.0",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

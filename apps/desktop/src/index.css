@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-vf-border;
+  }
+
+  body {
+    @apply bg-vf-black text-white overflow-hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-vf-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-vf-gold/40;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-vf-card/60 backdrop-blur-xl border border-vf-border/50 rounded-xl;
+  }
+
+  .glass-panel-gold {
+    @apply bg-vf-card/60 backdrop-blur-xl border border-vf-gold/20 rounded-xl;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 bg-vf-gold text-vf-black font-semibold rounded-lg hover:bg-vf-gold-light transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-vf-card border border-vf-border text-white rounded-lg hover:border-vf-gold/40 hover:text-vf-gold transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply px-3 py-1.5 text-vf-muted hover:text-vf-gold hover:bg-vf-gold/5 rounded-lg transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 bg-vf-black-light border border-vf-border rounded-lg text-white placeholder:text-vf-muted/60 focus:outline-none focus:border-vf-gold/50 focus:ring-1 focus:ring-vf-gold/20 transition-all duration-200;
+  }
+
+  .status-dot {
+    @apply w-2 h-2 rounded-full;
+  }
+
+  .terminal-log {
+    @apply font-mono text-xs leading-relaxed;
+  }
+}
