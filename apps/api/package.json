@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "build": "nest build",
+    "start": "node dist/main.js",
+    "start:dev": "nest start --watch",
     "dev": "nest start --watch",
     "prebuild": "cd ../../packages/shared && npm run build",
-    "build": "nest build",
     "vercel-build": "cd ../../packages/shared && npm run build && cd ../../apps/api && nest build",
-    "start": "node dist/main.js",
     "start:prod": "node dist/main.js"
   },
   "dependencies": {
